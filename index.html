@@ -1080,6 +1080,132 @@ img,svg,video{max-width:100%;height:auto}
   }
 }
 
+
+/* ===== RODAPÉ COM COMPRA + WHATSAPP VERDE ===== */
+.footer-buy-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:28px;
+  padding:18px 20px;
+  border:1px solid #242424;
+  border-radius:16px;
+  background:linear-gradient(180deg,#090909,#050505);
+}
+.footer-buy-box small{
+  display:block;
+  color:#777;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  margin-bottom:4px;
+}
+.footer-buy-box strong{
+  display:block;
+  color:#19c463;
+  font-family:Oswald,sans-serif;
+  font-size:28px;
+  line-height:1;
+  text-shadow:0 0 18px rgba(25,196,99,.22);
+}
+.footer-buy-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 20px;
+  border-radius:10px;
+  background:#19c463;
+  color:#fff!important;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.2px;
+  box-shadow:0 10px 28px rgba(25,196,99,.18);
+  transition:.25s;
+}
+.footer-buy-btn:hover{
+  background:#22d36f;
+  transform:translateY(-2px);
+  box-shadow:0 14px 34px rgba(25,196,99,.26);
+}
+
+/* WhatsApp flutuante */
+.whatsapp-float{
+  width:auto!important;
+  min-width:64px!important;
+  height:64px!important;
+  min-height:64px!important;
+  padding:0 18px!important;
+  border-radius:999px!important;
+  background:#25D366!important;
+  border:1px solid #3bea7b!important;
+  color:#fff!important;
+  box-shadow:0 14px 38px rgba(0,0,0,.5),0 0 28px rgba(37,211,102,.26)!important;
+}
+.whatsapp-float .wa-icon{
+  width:36px!important;
+  height:36px!important;
+  background:#fff!important;
+  color:#25D366!important;
+  font-size:20px!important;
+}
+.whatsapp-float .wa-text{
+  display:inline!important;
+  color:#fff!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  letter-spacing:.2px!important;
+  white-space:nowrap!important;
+}
+.whatsapp-float:hover{
+  background:#20c85e!important;
+  border-color:#59ef90!important;
+  transform:translateY(-3px) scale(1.03)!important;
+  box-shadow:0 16px 42px rgba(0,0,0,.55),0 0 34px rgba(37,211,102,.38)!important;
+}
+
+@media(max-width:600px){
+  .footer-buy-box{
+    flex-direction:column!important;
+    align-items:stretch!important;
+    padding:16px!important;
+    gap:12px!important;
+    margin-bottom:20px!important;
+  }
+  .footer-buy-box strong{
+    font-size:30px!important;
+  }
+  .footer-buy-btn{
+    width:100%!important;
+    min-height:54px!important;
+    font-size:12px!important;
+    border-radius:12px!important;
+  }
+
+  .whatsapp-float{
+    width:62px!important;
+    min-width:62px!important;
+    height:62px!important;
+    min-height:62px!important;
+    padding:0!important;
+    right:14px!important;
+    bottom:18px!important;
+    border-radius:50%!important;
+    background:#25D366!important;
+  }
+  .whatsapp-float .wa-text{
+    display:none!important;
+  }
+  .whatsapp-float .wa-icon{
+    width:38px!important;
+    height:38px!important;
+    background:#fff!important;
+    color:#25D366!important;
+    font-size:21px!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1234,7 +1360,16 @@ img,svg,video{max-width:100%;height:auto}
   <div class="final-actions"><a class="cta" href="/checkout/">QUERO A LISTA AGORA</a><a class="ghost-link" href="login.html">JÁ COMPREI — ACESSAR MINHA LISTA</a></div>
 </div></section>
 
-<footer><div class="wrap"><div class="footer-row"><div class="brand">LISTAS ALPHA</div><div class="footer-links"><a href="#">Termos</a><a href="#">Privacidade</a><a href="#">Reembolso</a><a href="#">Contato</a></div></div><p class="copy">© 2026 Listas Alpha. Todos os direitos reservados.</p></div></footer>
+<footer><div class="wrap">
+
+  <div class="footer-buy-box">
+    <div>
+      <small>LISTA PREMIUM DE FORNECEDORES</small>
+      <strong>R$ 297,00</strong>
+    </div>
+    <a href="/checkout/" class="footer-buy-btn">COMPRAR AGORA →</a>
+  </div>
+<div class="footer-row"><div class="brand">LISTAS ALPHA</div><div class="footer-links"><a href="#">Termos</a><a href="#">Privacidade</a><a href="#">Reembolso</a><a href="#">Contato</a></div></div><p class="copy">© 2026 Listas Alpha. Todos os direitos reservados.</p></div></footer>
 <a class="whatsapp-float" href="https://wa.me/5527998234537?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20Lista%20Alpha" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <span class="wa-icon" aria-hidden="true">
     <svg viewBox="0 0 32 32" width="21" height="21" fill="none" xmlns="http://www.w3.org/2000/svg">
