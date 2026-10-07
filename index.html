@@ -872,6 +872,214 @@ img,svg,video{max-width:100%;height:auto}
   text-shadow:0 0 22px rgba(25,196,99,.28);
 }
 
+
+/* ===== MOBILE HERO REFINADO V2 ===== */
+@media(max-width:768px){
+  .hero-inner{
+    padding:22px 18px 44px!important;
+  }
+
+  .alpha-logo{
+    margin:4px auto 46px!important;
+    animation:none!important;
+  }
+  .alpha-logo img{
+    width:min(150px,41vw)!important;
+    max-height:138px!important;
+    filter:drop-shadow(0 12px 24px rgba(255,255,255,.06))!important;
+  }
+
+  .mobile-alpha-hero{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    width:100%!important;
+    max-width:540px!important;
+    margin:0 auto!important;
+    text-align:left!important;
+  }
+
+  .mobile-premium-pill{
+    align-self:flex-start;
+    display:inline-flex;
+    align-items:center;
+    min-height:29px;
+    padding:0 11px;
+    margin-bottom:16px;
+    border:1px solid #2d2d2d;
+    border-radius:999px;
+    background:rgba(255,255,255,.025);
+    color:#9d9d9d;
+    font-size:8px;
+    font-weight:800;
+    letter-spacing:1.35px;
+    text-transform:uppercase;
+  }
+
+  .mobile-kicker{
+    font-size:clamp(18px,5.4vw,24px)!important;
+    line-height:1!important;
+    font-weight:500!important;
+    letter-spacing:-.55px!important;
+    white-space:nowrap;
+  }
+  .mobile-kicker span{
+    font-weight:900!important;
+    border-bottom:2px solid #fff!important;
+    padding-bottom:3px!important;
+  }
+
+  .mobile-main-title{
+    margin-top:8px!important;
+    width:100%!important;
+    font-size:clamp(46px,13.5vw,64px)!important;
+    line-height:.84!important;
+    letter-spacing:-3.2px!important;
+    font-weight:900!important;
+    color:#fff!important;
+    text-transform:uppercase!important;
+  }
+  .mobile-main-title strong{
+    font:inherit;
+    color:#fff;
+  }
+  .mobile-main-title:after{
+    display:none!important;
+  }
+
+  .mobile-rule{
+    width:42%;
+    height:3px;
+    margin:24px 0 18px;
+    background:linear-gradient(90deg,#fff,#6d6d6d,transparent);
+    border-radius:10px;
+  }
+
+  .mobile-subtitle{
+    margin:0!important;
+    max-width:95%;
+    color:#a8a8a8!important;
+    font-size:clamp(11px,3.15vw,14px)!important;
+    line-height:1.42!important;
+    font-weight:600!important;
+    text-align:left!important;
+    letter-spacing:.05px!important;
+  }
+  .mobile-subtitle strong{
+    color:#f4f4f4!important;
+    font-weight:850!important;
+  }
+
+  .mobile-desc{
+    margin:26px 0 0!important;
+    max-width:100%!important;
+    padding:0!important;
+    color:#747474!important;
+    font-size:clamp(11px,3.15vw,13px)!important;
+    line-height:1.55!important;
+    font-weight:500!important;
+    text-align:left!important;
+    text-transform:none!important;
+    letter-spacing:0!important;
+  }
+
+  .mobile-primary-cta{
+    position:relative;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:12px!important;
+    width:100%!important;
+    min-height:64px!important;
+    margin-top:25px!important;
+    padding:0 18px 0 20px!important;
+    border-radius:14px!important;
+    background:linear-gradient(180deg,#fafafa 0%,#d8d8d8 100%)!important;
+    color:#050505!important;
+    border:1px solid #fff!important;
+    box-shadow:0 14px 34px rgba(0,0,0,.42),0 0 0 1px rgba(255,255,255,.05)!important;
+    font-size:clamp(11px,3.25vw,14px)!important;
+    font-weight:900!important;
+    letter-spacing:.1px!important;
+    text-align:left!important;
+    animation:mobileCtaPulse 2.8s ease-in-out infinite!important;
+  }
+  .mobile-primary-cta span{
+    min-width:0;
+  }
+  .mobile-primary-cta b{
+    flex:0 0 auto;
+    width:34px;
+    height:34px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#090909;
+    color:#fff;
+    font-size:20px!important;
+    font-weight:500;
+  }
+
+  .mobile-trust{
+    justify-content:flex-start!important;
+    gap:10px 18px!important;
+    margin-top:17px!important;
+    color:#686868!important;
+    font-size:9px!important;
+    letter-spacing:.25px!important;
+  }
+
+  /* deixa o início da próxima seção respirar, sem parecer que o hero é infinito */
+  #conteudo{
+    padding-top:52px!important;
+  }
+
+  /* botão do WhatsApp menor e fora do CTA */
+  .whatsapp-float{
+    width:52px!important;
+    height:52px!important;
+    min-height:52px!important;
+    right:14px!important;
+    bottom:18px!important;
+    background:#f2f2f2!important;
+  }
+}
+
+@media(max-width:390px){
+  .hero-inner{
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+  .alpha-logo{
+    margin-bottom:38px!important;
+  }
+  .alpha-logo img{
+    width:min(136px,39vw)!important;
+  }
+  .mobile-premium-pill{
+    margin-bottom:14px;
+  }
+  .mobile-kicker{
+    font-size:17px!important;
+  }
+  .mobile-main-title{
+    font-size:clamp(42px,13.2vw,53px)!important;
+    letter-spacing:-2.7px!important;
+  }
+  .mobile-rule{
+    margin:20px 0 16px;
+  }
+  .mobile-desc{
+    margin-top:22px!important;
+  }
+  .mobile-primary-cta{
+    margin-top:22px!important;
+    min-height:60px!important;
+    padding-left:16px!important;
+    padding-right:14px!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -891,14 +1099,18 @@ img,svg,video{max-width:100%;height:auto}
     </div>
 
     <div class="mobile-alpha-hero">
+      <div class="mobile-premium-pill">LISTA PREMIUM • ACESSO IMEDIATO</div>
       <div class="mobile-kicker">QUER <span>ELEVAR</span> O NÍVEL</div>
-      <div class="mobile-main-title">DO SEU NEGÓCIO?</div>
-      <div class="mobile-subtitle">— OU INICIAR SUA LOJA COM <span>FORNECEDORES DE ALTO PADRÃO?</span></div>
-      <p class="mobile-desc">Tenha acesso a uma seleção organizada de fornecedores de moda masculina, contatos por categoria e bônus profissionais para aumentar o nível da sua operação e sua margem de lucro.</p>
-      <a class="mobile-primary-cta" href="/checkout/">ADQUIRIR LISTA DE FORNECEDORES <b>→</b></a>
+      <div class="mobile-main-title">DO SEU<br><strong>NEGÓCIO?</strong></div>
+      <div class="mobile-rule"></div>
+      <div class="mobile-subtitle">OU INICIAR SUA LOJA COM <strong>FORNECEDORES DE ALTO PADRÃO?</strong></div>
+      <p class="mobile-desc">Acesse fornecedores de moda masculina selecionados, organizados por categoria, além de bônus profissionais para fortalecer sua operação.</p>
+      <a class="mobile-primary-cta" href="/checkout/">
+        <span>QUERO A LISTA DE FORNECEDORES</span><b>→</b>
+      </a>
       <div class="mobile-trust">
         <span>🔒 COMPRA SEGURA</span>
-        <span>⚡ ENTREGA IMEDIATA</span>
+        <span>⚡ ACESSO IMEDIATO</span>
       </div>
     </div>
 
