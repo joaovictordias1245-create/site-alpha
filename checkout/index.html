@@ -392,6 +392,163 @@ img,svg{max-width:100%;height:auto}
   .mobile-submit-btn{display:none!important}
 }
 
+
+/* ===== MOBILE PEDIDO + COMPRA UNIFICADOS ===== */
+@media(max-width:600px){
+  .mobile-finalize{
+    display:block!important;
+    margin-top:18px!important;
+    padding:16px!important;
+    border:1px solid #242424!important;
+    border-radius:16px!important;
+    background:linear-gradient(180deg,#090909,#050505)!important;
+    box-shadow:0 16px 45px rgba(0,0,0,.34)!important;
+  }
+
+  .mobile-order-head{
+    display:flex!important;
+    align-items:flex-start!important;
+    justify-content:space-between!important;
+    gap:10px!important;
+    padding-bottom:13px!important;
+    border-bottom:1px solid #202020!important;
+  }
+  .mobile-order-head small{
+    display:block!important;
+    color:#777!important;
+    font-size:8px!important;
+    font-weight:900!important;
+    letter-spacing:1.2px!important;
+    margin-bottom:4px!important;
+  }
+  .mobile-order-head h3{
+    margin:0!important;
+    font-family:Oswald,sans-serif!important;
+    font-size:18px!important;
+    line-height:1.05!important;
+    text-transform:uppercase!important;
+    color:#fff!important;
+  }
+  .mobile-order-badge{
+    flex:0 0 auto!important;
+    background:#b70d0d!important;
+    color:#fff!important;
+    border:1px solid #ff4141!important;
+    border-radius:8px!important;
+    padding:6px 8px!important;
+    font-size:8px!important;
+    font-weight:900!important;
+    letter-spacing:.8px!important;
+  }
+
+  .mobile-product-row{
+    display:grid!important;
+    grid-template-columns:48px minmax(0,1fr)!important;
+    gap:11px!important;
+    align-items:center!important;
+    padding:13px 0!important;
+    border-bottom:1px solid #202020!important;
+  }
+  .mobile-product-logo{
+    width:48px!important;
+    height:48px!important;
+    border-radius:11px!important;
+    background:#fff!important;
+    display:grid!important;
+    place-items:center!important;
+    padding:4px!important;
+    overflow:hidden!important;
+  }
+  .mobile-product-logo img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+  }
+  .mobile-product-row strong{
+    display:block!important;
+    color:#fff!important;
+    font-size:11px!important;
+    line-height:1.3!important;
+  }
+  .mobile-product-row p{
+    margin:4px 0 0!important;
+    color:#777!important;
+    font-size:8.5px!important;
+    line-height:1.4!important;
+  }
+
+  .mobile-order-lines{
+    padding:10px 0!important;
+    border-bottom:1px solid #202020!important;
+  }
+  .mobile-order-lines>div{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:12px!important;
+    padding:5px 0!important;
+    font-size:9.5px!important;
+  }
+  .mobile-order-lines span{color:#858585!important}
+  .mobile-order-lines strong{color:#fff!important}
+  .mobile-order-lines del{color:#666!important}
+
+  .mobile-finalize-top{
+    display:flex!important;
+    justify-content:space-between!important;
+    align-items:flex-end!important;
+    gap:10px!important;
+    margin:13px 0 12px!important;
+  }
+  .mobile-finalize-top>div{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:3px!important;
+  }
+  .mobile-finalize-top small{
+    color:#777!important;
+    font-size:8px!important;
+    font-weight:900!important;
+    letter-spacing:1px!important;
+  }
+  .mobile-finalize-top strong{
+    color:#19c463!important;
+    font-family:Oswald,sans-serif!important;
+    font-size:31px!important;
+    line-height:1!important;
+    text-shadow:0 0 16px rgba(25,196,99,.22)!important;
+  }
+  .mobile-finalize-top>span{
+    color:#777!important;
+    font-size:8.5px!important;
+    padding-bottom:3px!important;
+  }
+
+  .mobile-submit-btn{
+    width:100%!important;
+    min-height:58px!important;
+    margin:0!important;
+    border-radius:12px!important;
+    font-size:13px!important;
+    box-shadow:0 12px 30px rgba(25,196,99,.22)!important;
+  }
+
+  .mobile-buy-meta{
+    display:flex!important;
+    justify-content:center!important;
+    gap:16px!important;
+    flex-wrap:wrap!important;
+    margin-top:10px!important;
+    color:#6f6f6f!important;
+    font-size:8px!important;
+  }
+
+  /* remove o resumo duplicado abaixo no mobile */
+  .order-card{
+    display:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -445,20 +602,49 @@ img,svg{max-width:100%;height:auto}
         <div class="notice"><b>Segurança:</b> dados de cartão não são coletados nem armazenados nesta página. Ao finalizar, o comprador deve ser enviado para o ambiente seguro do seu provedor de pagamento.</div>
         <label class="privacy"><input id="terms" type="checkbox" required><span>Concordo com os termos da compra e confirmo que os dados informados estão corretos.</span></label>
 
+        
         <div class="mobile-finalize">
+          <div class="mobile-order-head">
+            <div>
+              <small>SEU PEDIDO</small>
+              <h3>Lista Premium de Fornecedores</h3>
+            </div>
+            <div class="mobile-order-badge">OFERTA</div>
+          </div>
+
+          <div class="mobile-product-row">
+            <div class="mobile-product-logo">
+              <img src="/logo-alpha.png" alt="Alpha Fornecedores">
+            </div>
+            <div>
+              <strong>Lista Premium de Fornecedores</strong>
+              <p>Fornecedores de moda masculina + bônus profissionais.</p>
+            </div>
+          </div>
+
+          <div class="mobile-order-lines">
+            <div><span>Valor original</span><del>R$ 700,00</del></div>
+            <div><span>Desconto de hoje</span><strong>- R$ 403,00</strong></div>
+            <div><span>Entrega digital</span><strong>GRÁTIS</strong></div>
+          </div>
+
           <div class="mobile-finalize-top">
             <div>
-              <small>TOTAL DA COMPRA</small>
+              <small>TOTAL</small>
               <strong>R$ 297,00</strong>
             </div>
-            <span>Pagamento único</span>
+            <span>ou 12x de R$ 29,21</span>
           </div>
+
           <button class="buy-btn mobile-submit-btn" data-submit-buy type="submit">
             FINALIZAR COMPRA →
           </button>
-          <p>🔒 Compra segura • ⚡ Acesso digital após confirmação</p>
-        </div>
 
+          <div class="mobile-buy-meta">
+            <span>🔒 Compra segura</span>
+            <span>⚡ Acesso digital</span>
+          </div>
+        </div>
       </section>
 
       <aside class="card order-card">
