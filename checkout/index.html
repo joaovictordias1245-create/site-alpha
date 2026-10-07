@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<title>Checkout | Listas Alpha</title>
+<meta name="description" content="Finalize sua compra da Lista Premium de Fornecedores Listas Alpha.">
+<link rel="icon" type="image/png" href="logo-alpha.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--panel:#080808;--panel2:#0d0d0d;--line:#252525;--white:#fff;--muted:#8c8c8c;--green:#19c463;--green2:#28da74;--danger:#ff5757}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Arial,sans-serif;background:#000;color:#fff;min-height:100vh}button,input{font:inherit}a{text-decoration:none;color:inherit}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,#000 0%,transparent 92%);pointer-events:none;z-index:-2}
+body:after{content:"";position:fixed;width:900px;height:650px;left:50%;top:-220px;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,255,255,.08),transparent 66%);filter:blur(20px);pointer-events:none;z-index:-1}
+.top{height:74px;border-bottom:1px solid #1b1b1b;background:rgba(0,0,0,.86);backdrop-filter:blur(12px);display:flex;align-items:center;position:sticky;top:0;z-index:20}.top-inner{width:min(1160px,calc(100% - 32px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-family:Oswald,sans-serif;font-size:20px;letter-spacing:.5px}.brand img{width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(255,255,255,.08))}.brand-text{display:flex;flex-direction:column;line-height:1}.brand small{display:block;font-family:Inter,sans-serif;font-size:8px;letter-spacing:2px;color:#777;margin-top:5px}.secure{font-size:11px;color:#9a9a9a;font-weight:700;display:flex;align-items:center;gap:8px}.secure b{color:#fff}
+.page{width:min(1160px,calc(100% - 32px));margin:0 auto;padding:46px 0 70px}.headline{text-align:center;margin-bottom:35px}.headline .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #282828;border-radius:999px;padding:8px 13px;background:#070707;font-size:9px;letter-spacing:1.3px;text-transform:uppercase;color:#aaa;font-weight:800}.headline h1{font-family:Oswald,sans-serif;font-size:clamp(38px,5vw,62px);line-height:1;margin-top:16px;text-transform:uppercase}.headline p{color:#777;font-size:13px;margin-top:11px}
+.checkout-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:24px;align-items:start}.card{background:linear-gradient(180deg,#090909,#050505);border:1px solid #232323;border-radius:22px;box-shadow:0 28px 80px rgba(0,0,0,.38)}.form-card{padding:28px}.section-title{display:flex;align-items:center;gap:12px;margin-bottom:22px}.step{width:30px;height:30px;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;font-size:12px;font-weight:900}.section-title h2{font-family:Oswald,sans-serif;font-size:22px;text-transform:uppercase}.section-title p{font-size:10px;color:#6f6f6f;margin-top:3px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field.full{grid-column:1/-1}.field label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;color:#9a9a9a;margin:0 0 7px}.field input{width:100%;height:52px;border-radius:11px;border:1px solid #292929;background:#0b0b0b;color:#fff;padding:0 14px;outline:0;transition:.2s}.field input:focus{border-color:#707070;box-shadow:0 0 0 3px rgba(255,255,255,.04)}.field input::placeholder{color:#4b4b4b}.field .error{font-size:10px;color:var(--danger);margin-top:6px;display:none}.field.invalid input{border-color:rgba(255,87,87,.7)}.field.invalid .error{display:block}
+.divider{height:1px;background:#1f1f1f;margin:29px 0}.payment-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.payment{cursor:pointer;position:relative;border:1px solid #292929;background:#0a0a0a;border-radius:15px;padding:18px;min-height:108px;transition:.2s}.payment:hover{border-color:#555;transform:translateY(-2px)}.payment.active{border-color:#fff;background:#0e0e0e;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}.payment input{position:absolute;opacity:0;pointer-events:none}.payment-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.payment strong{font-size:14px}.payment small{display:block;color:#777;font-size:10px;line-height:1.45;margin-top:9px}.radio{width:18px;height:18px;border:1px solid #555;border-radius:50%;display:grid;place-items:center}.payment.active .radio:after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}.pay-icon{font-size:21px}.pix-tag{font-size:8px;background:var(--green);color:#fff;border-radius:999px;padding:4px 7px;font-weight:900;letter-spacing:.5px}
+.notice{margin-top:16px;border:1px solid #222;background:#060606;border-radius:12px;padding:13px 14px;font-size:10px;line-height:1.55;color:#7d7d7d}.notice b{color:#cfcfcf}.privacy{display:flex;gap:9px;align-items:flex-start;color:#707070;font-size:10px;line-height:1.5;margin-top:17px}.privacy input{margin-top:2px;accent-color:#fff}
+.order-card{padding:26px;position:sticky;top:98px;overflow:hidden}.order-card:before{content:"";position:absolute;inset:-100% auto auto -50%;width:190%;height:110px;transform:rotate(-15deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);animation:shine 5s linear infinite;pointer-events:none}.order-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid #202020}.order-head h2{font-family:Oswald,sans-serif;font-size:22px;text-transform:uppercase}.timer{font-family:Oswald,sans-serif;border:1px solid #303030;border-radius:8px;background:#0b0b0b;padding:7px 9px;font-size:15px;letter-spacing:1px}.product{padding:22px 0;display:grid;grid-template-columns:58px 1fr;gap:13px;border-bottom:1px solid #202020}.product-icon{width:58px;height:58px;border-radius:13px;background:#fff;color:#000;display:grid;place-items:center;overflow:hidden;padding:5px}.product-icon img{width:100%;height:100%;object-fit:contain}.product h3{font-size:13px;margin-top:2px}.product p{font-size:10px;color:#777;line-height:1.5;margin-top:6px}.line{display:flex;justify-content:space-between;gap:20px;font-size:12px;color:#8b8b8b;margin-top:15px}.line strong{color:#fff}.line.old span:last-child{text-decoration:line-through;color:#666}.total{display:flex;justify-content:space-between;align-items:end;border-top:1px solid #202020;margin-top:18px;padding-top:18px}.total span{font-size:11px;color:#888}.total strong{font-family:Oswald,sans-serif;font-size:35px}.installment{font-size:10px;color:#6e6e6e;text-align:right;margin-top:4px}.buy-btn{width:100%;border:0;border-radius:13px;min-height:59px;margin-top:22px;background:var(--green);color:#fff;font-weight:900;font-size:13px;letter-spacing:.2px;cursor:pointer;transition:.2s;box-shadow:0 0 0 rgba(25,196,99,0);animation:greenPulse 3s ease-in-out infinite}.buy-btn:hover{background:var(--green2);transform:translateY(-2px)}.buy-btn:disabled{cursor:not-allowed;opacity:.65;transform:none}.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.meta div{border:1px solid #202020;border-radius:9px;padding:10px 8px;text-align:center;color:#777;font-size:9px;line-height:1.4}.meta b{display:block;color:#cfcfcf;font-size:9px;margin-bottom:2px}.back{display:inline-flex;margin-top:20px;color:#666;font-size:10px;font-weight:800}.back:hover{color:#fff}
+.toast{position:fixed;right:20px;bottom:20px;max-width:360px;background:#101010;border:1px solid #343434;border-radius:13px;padding:15px 17px;box-shadow:0 16px 50px rgba(0,0,0,.55);transform:translateY(25px);opacity:0;pointer-events:none;transition:.25s;z-index:100;font-size:12px;line-height:1.5}.toast.show{opacity:1;transform:none}.toast b{display:block;margin-bottom:4px}.toast.error{border-color:#5a2929}
+@keyframes greenPulse{0%,100%{box-shadow:0 0 0 rgba(25,196,99,0)}50%{box-shadow:0 0 28px rgba(25,196,99,.24)}}@keyframes shine{0%{transform:translateY(-10px) rotate(-15deg)}100%{transform:translateY(700px) rotate(-15deg)}}
+@media(max-width:900px){.checkout-grid{grid-template-columns:1fr}.order-card{position:static;order:-1}.headline{margin-bottom:25px}.page{padding-top:32px}}
+@media(max-width:600px){.top{height:64px}.top-inner{width:calc(100% - 24px)}.brand{font-size:16px;gap:8px}.brand img{width:40px;height:40px}.secure{font-size:9px}.page{width:calc(100% - 22px);padding:26px 0 45px}.headline h1{font-size:38px}.headline p{font-size:11px}.form-card,.order-card{padding:18px;border-radius:17px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.payment-options{grid-template-columns:1fr}.meta{grid-template-columns:1fr 1fr}.total strong{font-size:31px}}
+
+/* contador de urgência */
+.timer{
+  color:#fff!important;
+  background:linear-gradient(180deg,#d90d0d,#9f0505)!important;
+  border-color:#ff4747!important;
+  box-shadow:0 0 22px rgba(255,25,25,.34);
+  animation:checkoutRedPulse 1.45s ease-in-out infinite!important;
+}
+@keyframes checkoutRedPulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(255,25,25,.25)}
+  50%{transform:scale(1.06);box-shadow:0 0 32px rgba(255,25,25,.5)}
+}
+
+
+/* ===== CHECKOUT RESPONSIVO ===== */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+img,svg{max-width:100%;height:auto}
+
+@media(max-width:900px){
+  .page{width:calc(100% - 24px)!important;padding:28px 0 54px!important}
+  .checkout-grid{display:flex!important;flex-direction:column!important;gap:14px!important}
+  .order-card{order:-1!important;position:static!important;width:100%!important}
+  .form-card{width:100%!important}
+  .headline{margin-bottom:22px!important}
+}
+
+@media(max-width:600px){
+  .top{
+    height:auto!important;
+    min-height:62px!important;
+    padding:7px 0!important;
+  }
+  .top-inner{
+    width:calc(100% - 20px)!important;
+    gap:8px!important;
+  }
+  .brand{
+    min-width:0;
+    flex:1;
+    gap:7px!important;
+    font-size:14px!important;
+  }
+  .brand img{width:38px!important;height:38px!important;flex:0 0 auto}
+  .brand-text{min-width:0}
+  .brand small{font-size:6.5px!important;letter-spacing:1.2px!important}
+  .secure{
+    flex:0 0 auto;
+    font-size:0!important;
+    gap:0!important;
+  }
+  .secure::after{
+    content:"🔒";
+    font-size:18px;
+  }
+  .secure>span{display:none!important}
+
+  .page{width:calc(100% - 18px)!important;padding:22px 0 38px!important}
+  .headline h1{
+    font-size:clamp(31px,10vw,39px)!important;
+    line-height:1.02!important;
+  }
+  .headline p{font-size:10px!important;line-height:1.5!important}
+
+  .form-card,.order-card{
+    padding:16px!important;
+    border-radius:16px!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .fields{grid-template-columns:1fr!important;gap:11px!important}
+  .field.full{grid-column:auto!important}
+  .field input{height:49px!important;font-size:14px!important}
+  .payment-options{grid-template-columns:1fr!important;gap:10px!important}
+  .payment{min-height:96px!important;padding:15px!important}
+  .section-title{align-items:flex-start!important}
+  .section-title h2{font-size:19px!important}
+
+  .order-head{
+    gap:8px;
+    align-items:center!important;
+  }
+  .order-head h2{font-size:19px!important}
+  .timer{
+    flex:0 0 auto;
+    font-size:14px!important;
+    padding:6px 8px!important;
+  }
+  .product{
+    grid-template-columns:50px minmax(0,1fr)!important;
+    gap:11px!important;
+    padding:17px 0!important;
+  }
+  .product-icon{width:50px!important;height:50px!important}
+  .product h3{font-size:12px!important}
+  .product p{font-size:9px!important}
+  .line{font-size:11px!important;gap:10px!important}
+  .total{align-items:center!important}
+  .total strong{font-size:30px!important}
+  .installment{text-align:left!important;font-size:9px!important}
+  .buy-btn{
+    min-height:56px!important;
+    font-size:12px!important;
+    margin-top:18px!important;
+  }
+  .meta{grid-template-columns:1fr!important}
+  .notice,.privacy{font-size:9px!important}
+}
+
+@media(max-width:360px){
+  .page{width:calc(100% - 14px)!important}
+  .form-card,.order-card{padding:13px!important}
+  .headline .eyebrow{font-size:7.5px!important;padding:7px 9px!important}
+  .total strong{font-size:27px!important}
+}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="/" aria-label="Voltar para a página inicial" title="Voltar para a página inicial"><img src="logo-alpha.png" alt="Alpha Fornecedores"><span class="brand-text">ALPHA FORNECEDORES<small>LISTA PREMIUM</small></span></a>
+    <div class="secure">🔒 <span>Ambiente de <b>checkout seguro</b></span></div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="headline">
+    <span class="eyebrow">✓ Você está a um passo do acesso</span>
+    <h1>FINALIZE SUA COMPRA</h1>
+    <p>Preencha seus dados para continuar para o pagamento.</p>
+  </div>
+
+  <form id="checkoutForm" novalidate>
+    <div class="checkout-grid">
+      <section class="card form-card">
+        <div class="section-title">
+          <span class="step">1</span>
+          <div><h2>Seus dados</h2><p>Usaremos estes dados para liberar seu acesso.</p></div>
+        </div>
+        <div class="fields">
+          <div class="field full" data-field="nome"><label for="nome">Nome completo</label><input id="nome" name="nome" autocomplete="name" placeholder="Digite seu nome completo" required><div class="error">Informe seu nome completo.</div></div>
+          <div class="field" data-field="email"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required><div class="error">Digite um e-mail válido.</div></div>
+          <div class="field" data-field="telefone"><label for="telefone">WhatsApp</label><input id="telefone" name="telefone" inputmode="tel" autocomplete="tel" placeholder="(27) 99999-9999" required><div class="error">Informe seu WhatsApp.</div></div>
+          <div class="field full" data-field="cpf"><label for="cpf">CPF</label><input id="cpf" name="cpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" required><div class="error">Informe um CPF válido.</div></div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="section-title">
+          <span class="step">2</span>
+          <div><h2>Forma de pagamento</h2><p>Escolha como deseja pagar.</p></div>
+        </div>
+
+        <div class="payment-options" id="paymentOptions">
+          <label class="payment active" data-method="pix">
+            <input type="radio" name="payment_method" value="pix" checked>
+            <div class="payment-top"><span class="pay-icon">◇</span><span class="pix-tag">RECOMENDADO</span><span class="radio"></span></div>
+            <strong>Pix</strong><small>Pagamento à vista com confirmação rápida.</small>
+          </label>
+          <label class="payment" data-method="card">
+            <input type="radio" name="payment_method" value="card">
+            <div class="payment-top"><span class="pay-icon">▣</span><span class="radio"></span></div>
+            <strong>Cartão de crédito</strong><small>Até 12x, processado em ambiente seguro do gateway.</small>
+          </label>
+        </div>
+
+        <div class="notice"><b>Segurança:</b> dados de cartão não são coletados nem armazenados nesta página. Ao finalizar, o comprador deve ser enviado para o ambiente seguro do seu provedor de pagamento.</div>
+        <label class="privacy"><input id="terms" type="checkbox" required><span>Concordo com os termos da compra e confirmo que os dados informados estão corretos.</span></label>
+      </section>
+
+      <aside class="card order-card">
+        <div class="order-head"><h2>Seu pedido</h2><div class="timer" id="timer">30:00</div></div>
+        <div class="product"><div class="product-icon"><img src="logo-alpha.png" alt="Alpha Fornecedores"></div><div><h3>Lista Premium de Fornecedores</h3><p>Fornecedores de moda masculina + bônus com contatos profissionais.</p></div></div>
+        <div class="line old"><span>Valor original</span><span>R$ 700,00</span></div>
+        <div class="line"><span>Desconto de hoje</span><strong>- R$ 403,00</strong></div>
+        <div class="line"><span>Entrega digital</span><strong>GRÁTIS</strong></div>
+        <div class="total"><span>Total</span><strong>R$ 297,00</strong></div>
+        <div class="installment">ou 12x de R$ 29,21 no cartão</div>
+        <button class="buy-btn" id="buyBtn" type="submit">FINALIZAR COMPRA →</button>
+        <div class="meta"><div><b>🔒 COMPRA SEGURA</b>Ambiente protegido</div><div><b>⚡ ACESSO DIGITAL</b>Após confirmação</div></div>
+        <a class="back" href="/">← VOLTAR PARA A PÁGINA</a>
+      </aside>
+    </div>
+  </form>
+</main>
+
+<div class="toast" id="toast"><b id="toastTitle"></b><span id="toastText"></span></div>
+
+<script>
+/*
+  CONFIGURAÇÃO DO PAGAMENTO
+  -------------------------
+  Para o checkout cobrar de verdade, conecte um gateway seguro.
+
+  Opção A (mais simples): informe URLs de pagamento já criadas no seu gateway.
+  Ex.: Mercado Pago, InfinitePay, Asaas, PagBank etc.
+
+  Opção B: use apiEndpoint para enviar os dados ao seu backend e receber
+  uma URL de checkout criada dinamicamente.
+*/
+const CHECKOUT_CONFIG = {
+  pixPaymentUrl: "",
+  cardPaymentUrl: "",
+  apiEndpoint: "" // Ex.: /api/criar-checkout
+};
+
+const form=document.getElementById('checkoutForm');
+const buyBtn=document.getElementById('buyBtn');
+const toast=document.getElementById('toast');
+const toastTitle=document.getElementById('toastTitle');
+const toastText=document.getElementById('toastText');
+
+function showToast(title,text,isError=true){
+  toastTitle.textContent=title;toastText.textContent=text;
+  toast.classList.toggle('error',isError);toast.classList.add('show');
+  clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>toast.classList.remove('show'),5200);
+}
+
+document.querySelectorAll('.payment').forEach(el=>{
+  el.addEventListener('click',()=>{
+    document.querySelectorAll('.payment').forEach(x=>x.classList.remove('active'));
+    el.classList.add('active');el.querySelector('input').checked=true;
+  });
+});
+
+function onlyDigits(v){return (v||'').replace(/\D/g,'')}
+function validCPF(value){
+  const cpf=onlyDigits(value);
+  if(cpf.length!==11||/^(\d)\1{10}$/.test(cpf)) return false;
+  let sum=0;for(let i=0;i<9;i++)sum+=Number(cpf[i])*(10-i);
+  let d1=(sum*10)%11;if(d1===10)d1=0;if(d1!==Number(cpf[9]))return false;
+  sum=0;for(let i=0;i<10;i++)sum+=Number(cpf[i])*(11-i);
+  let d2=(sum*10)%11;if(d2===10)d2=0;return d2===Number(cpf[10]);
+}
+function validate(){
+  let ok=true;
+  const nome=document.getElementById('nome'),email=document.getElementById('email'),telefone=document.getElementById('telefone'),cpf=document.getElementById('cpf'),terms=document.getElementById('terms');
+  const checks={nome:nome.value.trim().split(/\s+/).length>=2,email:/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()),telefone:onlyDigits(telefone.value).length>=10,cpf:validCPF(cpf.value)};
+  Object.entries(checks).forEach(([k,v])=>{const box=document.querySelector(`[data-field="${k}"]`);box.classList.toggle('invalid',!v);if(!v)ok=false});
+  if(!terms.checked){ok=false;showToast('Confirme os termos','Marque a confirmação dos termos para continuar.');}
+  return ok;
+}
+
+document.getElementById('telefone').addEventListener('input',e=>{
+  let v=onlyDigits(e.target.value).slice(0,11);
+  if(v.length>10)e.target.value=v.replace(/(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3');
+  else if(v.length>6)e.target.value=v.replace(/(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3');
+  else if(v.length>2)e.target.value=v.replace(/(\d{2})(\d+)/,'($1) $2');
+  else e.target.value=v;
+});
+document.getElementById('cpf').addEventListener('input',e=>{
+  let v=onlyDigits(e.target.value).slice(0,11);
+  e.target.value=v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
+});
+
+form.addEventListener('submit',async e=>{
+  e.preventDefault();if(!validate())return;
+  const method=document.querySelector('input[name="payment_method"]:checked').value;
+  const customer={nome:document.getElementById('nome').value.trim(),email:document.getElementById('email').value.trim(),telefone:document.getElementById('telefone').value.trim(),cpf:onlyDigits(document.getElementById('cpf').value),payment_method:method,product:'Lista Premium de Fornecedores',amount:297};
+
+  buyBtn.disabled=true;buyBtn.textContent='PROCESSANDO...';
+  try{
+    if(CHECKOUT_CONFIG.apiEndpoint){
+      const r=await fetch(CHECKOUT_CONFIG.apiEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(customer)});
+      if(!r.ok)throw new Error('Não foi possível iniciar o pagamento.');
+      const data=await r.json();
+      if(!data.redirect_url)throw new Error('O servidor não retornou a URL de pagamento.');
+      window.location.href=data.redirect_url;return;
+    }
+    const url=method==='pix'?CHECKOUT_CONFIG.pixPaymentUrl:CHECKOUT_CONFIG.cardPaymentUrl;
+    if(url){window.location.href=url;return;}
+    showToast('Pagamento ainda não configurado','A página do checkout está funcionando, mas não há um gateway de pagamento conectado. Configure Pix/cartão no CHECKOUT_CONFIG ou conecte uma API de pagamento.');
+  }catch(err){showToast('Erro no pagamento',err.message||'Tente novamente.');}
+  finally{buyBtn.disabled=false;buyBtn.textContent='FINALIZAR COMPRA →';}
+});
+
+let total=30*60;const timer=document.getElementById('timer');
+setInterval(()=>{const m=String(Math.floor(total/60)).padStart(2,'0'),s=String(total%60).padStart(2,'0');timer.textContent=`${m}:${s}`;total=total>0?total-1:30*60},1000);
+</script>
+</body>
+</html>

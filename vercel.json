@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/checkout.html",
+      "destination": "/checkout/",
+      "permanent": false
+    }
+  ],
   "cleanUrls": false,
   "trailingSlash": false
 }
