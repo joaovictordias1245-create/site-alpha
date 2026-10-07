@@ -149,6 +149,249 @@ img,svg{max-width:100%;height:auto}
   text-shadow:0 0 18px rgba(25,196,99,.22);
 }
 
+
+/* ===== CHECKOUT MOBILE PRÁTICO V2 ===== */
+.mobile-finalize{display:none}
+
+@media(max-width:900px){
+  .checkout-grid{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:14px!important;
+  }
+  .form-card{
+    order:1!important;
+    width:100%!important;
+  }
+  .order-card{
+    order:2!important;
+    position:static!important;
+    width:100%!important;
+  }
+}
+
+@media(max-width:600px){
+  .page{
+    width:calc(100% - 16px)!important;
+    padding:18px 0 34px!important;
+  }
+
+  .headline{
+    text-align:left!important;
+    margin-bottom:14px!important;
+    padding:0 4px!important;
+  }
+  .headline .eyebrow{
+    font-size:7.5px!important;
+    padding:7px 9px!important;
+  }
+  .headline h1{
+    font-size:31px!important;
+    line-height:1!important;
+    margin-top:11px!important;
+  }
+  .headline p{
+    font-size:10px!important;
+    margin-top:7px!important;
+  }
+
+  .form-card{
+    padding:14px!important;
+    border-radius:15px!important;
+  }
+
+  .section-title{
+    gap:10px!important;
+    margin-bottom:15px!important;
+  }
+  .step{
+    width:27px!important;
+    height:27px!important;
+    font-size:11px!important;
+    flex:0 0 27px!important;
+  }
+  .section-title h2{
+    font-size:18px!important;
+  }
+  .section-title p{
+    font-size:9px!important;
+    line-height:1.35!important;
+  }
+
+  .fields{
+    gap:9px!important;
+  }
+  .field label{
+    font-size:9px!important;
+    margin-bottom:5px!important;
+  }
+  .field input{
+    height:48px!important;
+    padding:0 12px!important;
+    border-radius:10px!important;
+    font-size:16px!important; /* evita zoom automático no iPhone */
+  }
+
+  .divider{
+    margin:20px 0!important;
+  }
+
+  .payment-options{
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+  .payment{
+    min-height:82px!important;
+    padding:13px!important;
+    border-radius:12px!important;
+  }
+  .payment strong{
+    font-size:13px!important;
+  }
+  .payment small{
+    font-size:9px!important;
+    margin-top:6px!important;
+  }
+  .pay-icon{
+    font-size:18px!important;
+  }
+
+  .notice{
+    margin-top:11px!important;
+    padding:10px 11px!important;
+    font-size:8.5px!important;
+    border-radius:10px!important;
+  }
+  .privacy{
+    margin-top:12px!important;
+    padding:10px 0 2px!important;
+    font-size:9px!important;
+    line-height:1.4!important;
+  }
+  .privacy input{
+    width:18px!important;
+    height:18px!important;
+    flex:0 0 18px!important;
+  }
+
+  .mobile-finalize{
+    display:block!important;
+    margin-top:15px!important;
+    padding-top:15px!important;
+    border-top:1px solid #202020!important;
+  }
+  .mobile-finalize-top{
+    display:flex!important;
+    justify-content:space-between!important;
+    align-items:flex-end!important;
+    gap:12px!important;
+    margin-bottom:12px!important;
+  }
+  .mobile-finalize-top div{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:3px!important;
+  }
+  .mobile-finalize-top small{
+    color:#777!important;
+    font-size:8px!important;
+    font-weight:800!important;
+    letter-spacing:1px!important;
+  }
+  .mobile-finalize-top strong{
+    color:#19c463!important;
+    font-family:Oswald,sans-serif!important;
+    font-size:30px!important;
+    line-height:1!important;
+    text-shadow:0 0 16px rgba(25,196,99,.2)!important;
+  }
+  .mobile-finalize-top>span{
+    color:#777!important;
+    font-size:8.5px!important;
+    padding-bottom:3px!important;
+  }
+  .mobile-submit-btn{
+    display:block!important;
+    width:100%!important;
+    min-height:58px!important;
+    margin:0!important;
+    border-radius:12px!important;
+    font-size:13px!important;
+    letter-spacing:.2px!important;
+    box-shadow:0 10px 30px rgba(25,196,99,.18)!important;
+  }
+  .mobile-finalize>p{
+    margin-top:9px!important;
+    color:#696969!important;
+    font-size:8px!important;
+    text-align:center!important;
+  }
+
+  /* no celular, o resumo vem depois do preenchimento */
+  .order-card{
+    margin-top:0!important;
+    padding:14px!important;
+    border-radius:15px!important;
+  }
+  .order-head{
+    padding-bottom:13px!important;
+  }
+  .order-head h2{
+    font-size:17px!important;
+  }
+  .timer{
+    font-size:13px!important;
+    padding:5px 7px!important;
+  }
+  .product{
+    padding:14px 0!important;
+    grid-template-columns:44px minmax(0,1fr)!important;
+  }
+  .product-icon{
+    width:44px!important;
+    height:44px!important;
+  }
+  .product h3{
+    font-size:11px!important;
+  }
+  .product p{
+    font-size:8.5px!important;
+  }
+  .line{
+    margin-top:10px!important;
+    font-size:10px!important;
+  }
+  .total{
+    margin-top:13px!important;
+    padding-top:13px!important;
+  }
+  .total strong{
+    font-size:28px!important;
+  }
+  .installment{
+    font-size:8.5px!important;
+  }
+  .desktop-submit-btn{
+    display:none!important;
+  }
+  .meta{
+    grid-template-columns:1fr 1fr!important;
+    margin-top:11px!important;
+  }
+  .meta div{
+    padding:8px 5px!important;
+    font-size:8px!important;
+  }
+  .back{
+    margin-top:14px!important;
+    font-size:9px!important;
+  }
+}
+
+@media(min-width:601px){
+  .mobile-submit-btn{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -201,6 +444,21 @@ img,svg{max-width:100%;height:auto}
 
         <div class="notice"><b>Segurança:</b> dados de cartão não são coletados nem armazenados nesta página. Ao finalizar, o comprador deve ser enviado para o ambiente seguro do seu provedor de pagamento.</div>
         <label class="privacy"><input id="terms" type="checkbox" required><span>Concordo com os termos da compra e confirmo que os dados informados estão corretos.</span></label>
+
+        <div class="mobile-finalize">
+          <div class="mobile-finalize-top">
+            <div>
+              <small>TOTAL DA COMPRA</small>
+              <strong>R$ 297,00</strong>
+            </div>
+            <span>Pagamento único</span>
+          </div>
+          <button class="buy-btn mobile-submit-btn" data-submit-buy type="submit">
+            FINALIZAR COMPRA →
+          </button>
+          <p>🔒 Compra segura • ⚡ Acesso digital após confirmação</p>
+        </div>
+
       </section>
 
       <aside class="card order-card">
@@ -211,7 +469,7 @@ img,svg{max-width:100%;height:auto}
         <div class="line"><span>Entrega digital</span><strong>GRÁTIS</strong></div>
         <div class="total"><span>Total</span><strong>R$ 297,00</strong></div>
         <div class="installment">ou 12x de R$ 29,21 no cartão</div>
-        <button class="buy-btn" id="buyBtn" type="submit">FINALIZAR COMPRA →</button>
+        <button class="buy-btn desktop-submit-btn" id="buyBtn" data-submit-buy type="submit">FINALIZAR COMPRA →</button>
         <div class="meta"><div><b>🔒 COMPRA SEGURA</b>Ambiente protegido</div><div><b>⚡ ACESSO DIGITAL</b>Após confirmação</div></div>
         <a class="back" href="/">← VOLTAR PARA A PÁGINA</a>
       </aside>
@@ -240,7 +498,7 @@ const CHECKOUT_CONFIG = {
 };
 
 const form=document.getElementById('checkoutForm');
-const buyBtn=document.getElementById('buyBtn');
+const buyBtns=[...document.querySelectorAll('[data-submit-buy]')];
 const toast=document.getElementById('toast');
 const toastTitle=document.getElementById('toastTitle');
 const toastText=document.getElementById('toastText');
@@ -293,7 +551,7 @@ form.addEventListener('submit',async e=>{
   const method=document.querySelector('input[name="payment_method"]:checked').value;
   const customer={nome:document.getElementById('nome').value.trim(),email:document.getElementById('email').value.trim(),telefone:document.getElementById('telefone').value.trim(),cpf:onlyDigits(document.getElementById('cpf').value),payment_method:method,product:'Lista Premium de Fornecedores',amount:297};
 
-  buyBtn.disabled=true;buyBtn.textContent='PROCESSANDO...';
+  buyBtns.forEach(btn=>{btn.disabled=true;btn.textContent='PROCESSANDO...';});
   try{
     if(CHECKOUT_CONFIG.apiEndpoint){
       const r=await fetch(CHECKOUT_CONFIG.apiEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(customer)});
@@ -306,7 +564,7 @@ form.addEventListener('submit',async e=>{
     if(url){window.location.href=url;return;}
     showToast('Pagamento ainda não configurado','A página do checkout está funcionando, mas não há um gateway de pagamento conectado. Configure Pix/cartão no CHECKOUT_CONFIG ou conecte uma API de pagamento.');
   }catch(err){showToast('Erro no pagamento',err.message||'Tente novamente.');}
-  finally{buyBtn.disabled=false;buyBtn.textContent='FINALIZAR COMPRA →';}
+  finally{buyBtns.forEach(btn=>{btn.disabled=false;btn.textContent='FINALIZAR COMPRA →';});}
 });
 
 let total=30*60;const timer=document.getElementById('timer');
