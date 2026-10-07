@@ -135,9 +135,190 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
 }
 @media(prefers-reduced-motion:reduce){.reveal,.reveal.in-view,.cta,.mobile-buy a,.whatsapp-float,.hero::before,.hero::after{animation:none!important;transition:none!important;transform:none!important;filter:none!important;opacity:1!important}}
 
+
+/* ===== MAIS VIDA / EFEITOS AO ROLAR ===== */
+:root{
+  --urgency:#ff2b2b;
+  --urgency2:#ff5a5a;
+}
+.top-timer{
+  color:#fff!important;
+  background:linear-gradient(180deg,#d90d0d,#9f0505)!important;
+  border-color:#ff4747!important;
+  box-shadow:0 0 0 1px rgba(255,71,71,.22),0 0 24px rgba(255,25,25,.32);
+  animation:redTimerPulse 1.45s ease-in-out infinite!important;
+}
+#priceTimer{
+  color:#ff3939!important;
+  text-shadow:0 0 18px rgba(255,30,30,.55);
+  animation:redTextPulse 1.45s ease-in-out infinite;
+}
+.offer-mini{
+  border-color:rgba(255,52,52,.42)!important;
+  box-shadow:inset 0 0 26px rgba(255,30,30,.04),0 0 24px rgba(255,30,30,.08);
+}
+.offerbar{
+  box-shadow:0 12px 40px rgba(0,0,0,.4);
+}
+.scroll-progress{
+  position:fixed;
+  left:0;top:0;
+  width:0;height:3px;
+  z-index:999;
+  background:linear-gradient(90deg,#ff1f1f,#ff5858);
+  box-shadow:0 0 18px rgba(255,35,35,.75);
+  pointer-events:none;
+}
+
+/* Reveal variants */
+.fx-reveal{
+  opacity:0;
+  transform:translateY(55px) scale(.965);
+  filter:blur(7px);
+  transition:opacity .85s ease,transform .9s cubic-bezier(.18,.72,.18,1),filter .85s ease;
+  will-change:transform,opacity,filter;
+}
+.fx-reveal.fx-left{transform:translateX(-70px) scale(.97)}
+.fx-reveal.fx-right{transform:translateX(70px) scale(.97)}
+.fx-reveal.fx-pop{transform:translateY(28px) scale(.90)}
+.fx-reveal.fx-visible{
+  opacity:1;
+  transform:translate3d(0,0,0) scale(1);
+  filter:blur(0);
+}
+.fx-delay-1{transition-delay:.08s}
+.fx-delay-2{transition-delay:.16s}
+.fx-delay-3{transition-delay:.24s}
+.fx-delay-4{transition-delay:.32s}
+
+/* Section energy */
+.section.fx-section-active .section-label,
+.section.fx-section-active .pill-kicker,
+.section.fx-section-active .bonus-chip span{
+  border-color:#505050;
+  box-shadow:0 0 28px rgba(255,255,255,.07);
+}
+.section h2{
+  transition:letter-spacing .7s ease,text-shadow .7s ease;
+}
+.section.fx-section-active h2{
+  letter-spacing:-.4px;
+  text-shadow:0 0 30px rgba(255,255,255,.07);
+}
+.info-card,.bonus-card,.testimonial,.pro-row,.faq details{
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease,background .35s ease!important;
+}
+.info-card.fx-visible,.bonus-card.fx-visible,.testimonial.fx-visible,.pro-row.fx-visible{
+  box-shadow:0 22px 70px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.025);
+}
+.info-card:hover,.bonus-card:hover,.testimonial:hover,.pro-row:hover{
+  transform:translateY(-7px) scale(1.012)!important;
+  border-color:#595959!important;
+  box-shadow:0 28px 75px rgba(0,0,0,.5),0 0 28px rgba(255,255,255,.04)!important;
+}
+
+/* Hero motion */
+.alpha-logo{
+  animation:logoFloat 4.8s ease-in-out infinite;
+}
+.hero-title .line{
+  transition:transform .35s ease,text-shadow .35s ease;
+}
+.hero-title .line:hover{
+  transform:scale(1.018);
+  text-shadow:0 0 30px rgba(255,255,255,.11);
+}
+.hero-inner:after{
+  content:"";
+  position:absolute;
+  left:50%;top:41%;
+  width:620px;height:620px;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(255,255,255,.035);
+  border-radius:50%;
+  animation:heroRing 7s ease-in-out infinite;
+  pointer-events:none;
+  z-index:-1;
+}
+
+/* Animated sheen on important blocks */
+.offer-box,.bonus-promo-card{
+  isolation:isolate;
+}
+.offer-box .price,.bonus-promo-card h3{
+  position:relative;
+}
+.cta{
+  position:relative;
+  overflow:hidden;
+}
+.cta:after{
+  content:"";
+  position:absolute;
+  top:-60%;left:-35%;
+  width:25%;height:220%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:rotate(20deg);
+  animation:ctaSweep 4.4s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* Small decorative moving lights */
+.fx-orb{
+  position:fixed;
+  width:210px;height:210px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+  filter:blur(70px);
+  opacity:.12;
+  background:#fff;
+  transition:transform .08s linear;
+}
+.fx-orb.one{left:-90px;top:34vh}
+.fx-orb.two{right:-110px;top:62vh;opacity:.08}
+
+/* Counters */
+@keyframes redTimerPulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 1px rgba(255,71,71,.18),0 0 18px rgba(255,25,25,.22)}
+  50%{transform:scale(1.055);box-shadow:0 0 0 3px rgba(255,71,71,.12),0 0 34px rgba(255,25,25,.48)}
+}
+@keyframes redTextPulse{
+  0%,100%{opacity:1;text-shadow:0 0 12px rgba(255,30,30,.35)}
+  50%{opacity:.76;text-shadow:0 0 25px rgba(255,30,30,.75)}
+}
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+@keyframes heroRing{
+  0%,100%{opacity:.12;transform:translate(-50%,-50%) scale(.86)}
+  50%{opacity:.38;transform:translate(-50%,-50%) scale(1.05)}
+}
+@keyframes ctaSweep{
+  0%,55%{left:-40%;opacity:0}
+  66%{opacity:.85}
+  82%,100%{left:125%;opacity:0}
+}
+
+@media(max-width:600px){
+  .fx-reveal.fx-left,.fx-reveal.fx-right{transform:translateY(42px) scale(.97)}
+  .fx-reveal.fx-visible{transform:none}
+  .fx-orb{display:none}
+  .top-timer{box-shadow:0 0 18px rgba(255,25,25,.35)}
+}
+@media(prefers-reduced-motion:reduce){
+  .fx-reveal,.fx-reveal.fx-visible,.alpha-logo,.top-timer,#priceTimer,.cta:after,.hero-inner:after{
+    animation:none!important;transition:none!important;transform:none!important;filter:none!important;opacity:1!important;
+  }
+}
+
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="fx-orb one" aria-hidden="true"></div>
+<div class="fx-orb two" aria-hidden="true"></div>
 <div class="offerbar">
   <div class="top-left"><a class="top-btn ghost" href="login.html">JÁ COMPREI</a></div>
   <div class="top-center"><span>OFERTA EXPIRA EM</span><strong id="topTimer" class="top-timer">30:00</strong></div>
@@ -309,6 +490,76 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
     },{threshold:.13,rootMargin:'0px 0px -35px 0px'});
     targets.forEach(el=>io.observe(el));
   } else { targets.forEach(el=>el.classList.add('in-view')); }
+
+  /* efeitos de scroll mais vivos */
+  const fxGroups = [
+    ['.proof-item', 'fx-pop'],
+    ['.info-card', 'fx-pop'],
+    ['.bonus-promo-card', 'fx-left'],
+    ['.bonus-detail', 'fx-right'],
+    ['.pro-row', 'fx-right'],
+    ['.offer-box', 'fx-pop'],
+    ['.faq details', 'fx-left'],
+    ['.testimonial', 'fx-pop'],
+    ['.final-actions', 'fx-pop'],
+    ['footer .wrap', 'fx-pop']
+  ];
+
+  const fxTargets=[];
+  fxGroups.forEach(([selector,type])=>{
+    document.querySelectorAll(selector).forEach((el,i)=>{
+      el.classList.add('fx-reveal',type,'fx-delay-'+((i%4)+1));
+      fxTargets.push(el);
+    });
+  });
+
+  if('IntersectionObserver' in window){
+    const fxObserver=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('fx-visible');
+          fxObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.10,rootMargin:'0px 0px -7% 0px'});
+    fxTargets.forEach(el=>fxObserver.observe(el));
+
+    const sectionObserver=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        entry.target.classList.toggle('fx-section-active',entry.isIntersecting);
+      });
+    },{threshold:.22});
+    document.querySelectorAll('.section').forEach(sec=>sectionObserver.observe(sec));
+  }else{
+    fxTargets.forEach(el=>el.classList.add('fx-visible'));
+  }
+
+  /* barra de progresso + parallax discreto */
+  const progress=document.getElementById('scrollProgress');
+  const orb1=document.querySelector('.fx-orb.one');
+  const orb2=document.querySelector('.fx-orb.two');
+  let ticking=false;
+  function updateScrollFx(){
+    const doc=document.documentElement;
+    const max=Math.max(1,doc.scrollHeight-innerHeight);
+    const ratio=Math.min(1,Math.max(0,scrollY/max));
+    if(progress) progress.style.width=(ratio*100)+'%';
+
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches===false){
+      const shift=Math.min(90,scrollY*.055);
+      if(orb1) orb1.style.transform=`translate3d(${shift*.22}px,${shift}px,0)`;
+      if(orb2) orb2.style.transform=`translate3d(${-shift*.18}px,${-shift*.55}px,0)`;
+    }
+    ticking=false;
+  }
+  addEventListener('scroll',()=>{
+    if(!ticking){
+      requestAnimationFrame(updateScrollFx);
+      ticking=true;
+    }
+  },{passive:true});
+  updateScrollFx();
+
 })();
 </script>
 </body>

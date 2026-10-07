@@ -26,12 +26,26 @@ body:after{content:"";position:fixed;width:900px;height:650px;left:50%;top:-220p
 @keyframes greenPulse{0%,100%{box-shadow:0 0 0 rgba(25,196,99,0)}50%{box-shadow:0 0 28px rgba(25,196,99,.24)}}@keyframes shine{0%{transform:translateY(-10px) rotate(-15deg)}100%{transform:translateY(700px) rotate(-15deg)}}
 @media(max-width:900px){.checkout-grid{grid-template-columns:1fr}.order-card{position:static;order:-1}.headline{margin-bottom:25px}.page{padding-top:32px}}
 @media(max-width:600px){.top{height:64px}.top-inner{width:calc(100% - 24px)}.brand{font-size:16px;gap:8px}.brand img{width:40px;height:40px}.secure{font-size:9px}.page{width:calc(100% - 22px);padding:26px 0 45px}.headline h1{font-size:38px}.headline p{font-size:11px}.form-card,.order-card{padding:18px;border-radius:17px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.payment-options{grid-template-columns:1fr}.meta{grid-template-columns:1fr 1fr}.total strong{font-size:31px}}
+
+/* contador de urgência */
+.timer{
+  color:#fff!important;
+  background:linear-gradient(180deg,#d90d0d,#9f0505)!important;
+  border-color:#ff4747!important;
+  box-shadow:0 0 22px rgba(255,25,25,.34);
+  animation:checkoutRedPulse 1.45s ease-in-out infinite!important;
+}
+@keyframes checkoutRedPulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(255,25,25,.25)}
+  50%{transform:scale(1.06);box-shadow:0 0 32px rgba(255,25,25,.5)}
+}
+
 </style>
 </head>
 <body>
 <header class="top">
   <div class="top-inner">
-    <a class="brand" href="index.html"><img src="logo-alpha.png" alt="Alpha Fornecedores"><span class="brand-text">ALPHA FORNECEDORES<small>LISTA PREMIUM</small></span></a>
+    <a class="brand" href="/" aria-label="Voltar para a página inicial" title="Voltar para a página inicial"><img src="logo-alpha.png" alt="Alpha Fornecedores"><span class="brand-text">ALPHA FORNECEDORES<small>LISTA PREMIUM</small></span></a>
     <div class="secure">🔒 <span>Ambiente de <b>checkout seguro</b></span></div>
   </div>
 </header>
