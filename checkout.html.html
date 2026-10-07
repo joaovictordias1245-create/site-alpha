@@ -40,6 +40,108 @@ body:after{content:"";position:fixed;width:900px;height:650px;left:50%;top:-220p
   50%{transform:scale(1.06);box-shadow:0 0 32px rgba(255,25,25,.5)}
 }
 
+
+/* ===== CHECKOUT RESPONSIVO ===== */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+img,svg{max-width:100%;height:auto}
+
+@media(max-width:900px){
+  .page{width:calc(100% - 24px)!important;padding:28px 0 54px!important}
+  .checkout-grid{display:flex!important;flex-direction:column!important;gap:14px!important}
+  .order-card{order:-1!important;position:static!important;width:100%!important}
+  .form-card{width:100%!important}
+  .headline{margin-bottom:22px!important}
+}
+
+@media(max-width:600px){
+  .top{
+    height:auto!important;
+    min-height:62px!important;
+    padding:7px 0!important;
+  }
+  .top-inner{
+    width:calc(100% - 20px)!important;
+    gap:8px!important;
+  }
+  .brand{
+    min-width:0;
+    flex:1;
+    gap:7px!important;
+    font-size:14px!important;
+  }
+  .brand img{width:38px!important;height:38px!important;flex:0 0 auto}
+  .brand-text{min-width:0}
+  .brand small{font-size:6.5px!important;letter-spacing:1.2px!important}
+  .secure{
+    flex:0 0 auto;
+    font-size:0!important;
+    gap:0!important;
+  }
+  .secure::after{
+    content:"🔒";
+    font-size:18px;
+  }
+  .secure>span{display:none!important}
+
+  .page{width:calc(100% - 18px)!important;padding:22px 0 38px!important}
+  .headline h1{
+    font-size:clamp(31px,10vw,39px)!important;
+    line-height:1.02!important;
+  }
+  .headline p{font-size:10px!important;line-height:1.5!important}
+
+  .form-card,.order-card{
+    padding:16px!important;
+    border-radius:16px!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .fields{grid-template-columns:1fr!important;gap:11px!important}
+  .field.full{grid-column:auto!important}
+  .field input{height:49px!important;font-size:14px!important}
+  .payment-options{grid-template-columns:1fr!important;gap:10px!important}
+  .payment{min-height:96px!important;padding:15px!important}
+  .section-title{align-items:flex-start!important}
+  .section-title h2{font-size:19px!important}
+
+  .order-head{
+    gap:8px;
+    align-items:center!important;
+  }
+  .order-head h2{font-size:19px!important}
+  .timer{
+    flex:0 0 auto;
+    font-size:14px!important;
+    padding:6px 8px!important;
+  }
+  .product{
+    grid-template-columns:50px minmax(0,1fr)!important;
+    gap:11px!important;
+    padding:17px 0!important;
+  }
+  .product-icon{width:50px!important;height:50px!important}
+  .product h3{font-size:12px!important}
+  .product p{font-size:9px!important}
+  .line{font-size:11px!important;gap:10px!important}
+  .total{align-items:center!important}
+  .total strong{font-size:30px!important}
+  .installment{text-align:left!important;font-size:9px!important}
+  .buy-btn{
+    min-height:56px!important;
+    font-size:12px!important;
+    margin-top:18px!important;
+  }
+  .meta{grid-template-columns:1fr!important}
+  .notice,.privacy{font-size:9px!important}
+}
+
+@media(max-width:360px){
+  .page{width:calc(100% - 14px)!important}
+  .form-card,.order-card{padding:13px!important}
+  .headline .eyebrow{font-size:7.5px!important;padding:7px 9px!important}
+  .total strong{font-size:27px!important}
+}
+
 </style>
 </head>
 <body>
@@ -104,7 +206,7 @@ body:after{content:"";position:fixed;width:900px;height:650px;left:50%;top:-220p
         <div class="installment">ou 12x de R$ 29,21 no cartão</div>
         <button class="buy-btn" id="buyBtn" type="submit">FINALIZAR COMPRA →</button>
         <div class="meta"><div><b>🔒 COMPRA SEGURA</b>Ambiente protegido</div><div><b>⚡ ACESSO DIGITAL</b>Após confirmação</div></div>
-        <a class="back" href="index.html">← VOLTAR PARA A PÁGINA</a>
+        <a class="back" href="/">← VOLTAR PARA A PÁGINA</a>
       </aside>
     </div>
   </form>
@@ -195,7 +297,7 @@ form.addEventListener('submit',async e=>{
     }
     const url=method==='pix'?CHECKOUT_CONFIG.pixPaymentUrl:CHECKOUT_CONFIG.cardPaymentUrl;
     if(url){window.location.href=url;return;}
-    showToast('Checkout criado','O visual e os dados do checkout estão prontos. Falta apenas conectar o link/API do seu gateway de pagamento para cobrar de verdade.');
+    showToast('Pagamento ainda não configurado','A página do checkout está funcionando, mas não há um gateway de pagamento conectado. Configure Pix/cartão no CHECKOUT_CONFIG ou conecte uma API de pagamento.');
   }catch(err){showToast('Erro no pagamento',err.message||'Tente novamente.');}
   finally{buyBtn.disabled=false;buyBtn.textContent='FINALIZAR COMPRA →';}
 });

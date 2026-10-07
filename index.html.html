@@ -313,6 +313,216 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
   }
 }
 
+
+/* ===== CORREÇÃO RESPONSIVA MOBILE ===== */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video{max-width:100%;height:auto}
+.hero-title,.hero-title .line{width:100%;max-width:100%;text-align:center}
+.hero-title .line{overflow-wrap:break-word;word-break:normal}
+
+@media(max-width:768px){
+  .offerbar{
+    min-height:62px;
+    grid-template-columns:auto 1fr;
+    gap:8px;
+    padding:7px 10px;
+  }
+  .top-left{min-width:0}
+  .top-center{
+    justify-self:end;
+    min-width:0;
+    gap:6px;
+    font-size:8px;
+    letter-spacing:.45px;
+    text-align:right;
+  }
+  .top-timer{
+    min-width:62px!important;
+    padding:7px 8px!important;
+    font-size:15px!important;
+  }
+
+  .hero{min-height:auto}
+  .hero-inner{
+    width:calc(100% - 24px)!important;
+    max-width:100%;
+    padding:38px 0 62px!important;
+  }
+  .hero-inner:before{
+    width:100%!important;
+    max-width:100%;
+    height:425px!important;
+    top:62px!important;
+    border-radius:20px!important;
+  }
+  .hero-inner:after{display:none!important}
+  .alpha-logo{margin-bottom:22px!important}
+  .alpha-logo img{width:min(205px,64vw)!important}
+  .eyebrow{
+    max-width:96%;
+    white-space:normal;
+    text-align:center;
+    justify-content:center;
+    line-height:1.35;
+    font-size:8px!important;
+    padding:7px 10px!important;
+  }
+
+  .hero h1{
+    width:100%;
+    max-width:100%;
+    line-height:.98!important;
+    letter-spacing:-1px!important;
+  }
+  .hero-title{gap:5px!important}
+  .hero-title .line-solid{
+    font-size:clamp(39px,11.7vw,54px)!important;
+    line-height:.96;
+  }
+  .hero-title .line-mixed{
+    font-size:clamp(31px,9.3vw,44px)!important;
+    line-height:1;
+  }
+  .hero-title .line-outline{
+    font-size:clamp(29px,8.7vw,41px)!important;
+    line-height:1.05;
+    white-space:normal!important;
+    color:#fff!important;
+    -webkit-text-stroke:0!important;
+  }
+  .hero-title .inline-outline{
+    color:#d9d9d9!important;
+    -webkit-text-stroke:0!important;
+  }
+  .hero-lead{
+    max-width:100%!important;
+    font-size:12px!important;
+    line-height:1.62!important;
+    margin-top:19px!important;
+    padding:0 4px;
+  }
+  .hero-actions{
+    width:100%;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:9px!important;
+    margin-top:24px!important;
+  }
+  .hero-actions .cta{
+    width:100%!important;
+    min-width:0;
+    margin:0!important;
+    padding:0 15px!important;
+    min-height:54px!important;
+    font-size:11px!important;
+    text-align:center;
+  }
+  .trust{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:7px!important;
+    margin-top:18px!important;
+  }
+
+  .wrap{width:calc(100% - 24px)!important;max-width:100%!important}
+  .section{padding:62px 0!important}
+  .section h2{
+    max-width:100%;
+    font-size:clamp(31px,9vw,39px)!important;
+    line-height:1.04!important;
+  }
+  .section-intro{font-size:12px!important;line-height:1.62!important}
+  .feature-stage,
+  .today-bonus-wrap,
+  .bonus-grid,
+  .testimonials{
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+  }
+  .info-card,
+  .bonus-card,
+  .testimonial,
+  .pro-row{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+
+  .today-bonus-wrap{gap:27px!important}
+  .bonus-promo-card{
+    width:100%!important;
+    min-height:430px!important;
+    max-width:100%!important;
+  }
+  .bonus-detail h2{font-size:clamp(31px,9vw,39px)!important}
+  .pro-row{
+    grid-template-columns:42px minmax(0,1fr)!important;
+    gap:12px!important;
+    padding:17px 14px!important;
+  }
+  .pro-row p{overflow-wrap:anywhere}
+
+  .offer-wrap{width:calc(100% - 24px)!important}
+  .offer-box{padding:18px 14px 20px!important}
+  .offer-mini{
+    max-width:100%;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .price-card h2{font-size:34px!important}
+  .price strong{font-size:64px!important}
+  .benefits-box{padding:15px 13px!important}
+  .benefits-box li{font-size:12px!important}
+  .offer-meta{gap:8px!important;font-size:10px!important}
+
+  .final-actions{
+    width:100%;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+  }
+  .final-actions .cta,.ghost-link{
+    width:100%!important;
+    margin:0!important;
+    min-width:0;
+  }
+
+  .footer-row{display:block!important}
+  .footer-links{gap:12px!important}
+
+  .mobile-buy{
+    padding:9px 10px calc(9px + env(safe-area-inset-bottom))!important;
+  }
+  .mobile-buy a{
+    padding:11px 13px!important;
+    white-space:nowrap;
+  }
+  .whatsapp-float{
+    right:14px!important;
+    bottom:82px!important;
+    width:52px!important;
+    height:52px!important;
+    min-height:52px!important;
+  }
+
+  /* efeitos mais leves no celular para não travar/layout saltar */
+  .fx-reveal,.fx-reveal.fx-left,.fx-reveal.fx-right,.fx-reveal.fx-pop{
+    transform:translateY(22px) scale(.99)!important;
+    filter:none!important;
+  }
+  .fx-reveal.fx-visible{transform:none!important}
+  .fx-orb{display:none!important}
+}
+
+@media(max-width:390px){
+  .top-left .top-btn{padding:9px 8px!important;font-size:8px!important}
+  .top-center>span{display:none}
+  .hero-title .line-solid{font-size:clamp(35px,11vw,43px)!important}
+  .hero-title .line-mixed{font-size:clamp(28px,8.9vw,35px)!important}
+  .hero-title .line-outline{font-size:clamp(26px,8.1vw,32px)!important}
+  .alpha-logo img{width:min(180px,60vw)!important}
+  .price strong{font-size:58px!important}
+}
+
 </style>
 </head>
 <body>
@@ -322,7 +532,7 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
 <div class="offerbar">
   <div class="top-left"><a class="top-btn ghost" href="login.html">JÁ COMPREI</a></div>
   <div class="top-center"><span>OFERTA EXPIRA EM</span><strong id="topTimer" class="top-timer">30:00</strong></div>
-  <div class="top-right"><a class="top-btn buy" href="checkout.html">COMPRAR</a></div>
+  <div class="top-right"><a class="top-btn buy" href="/checkout.html">COMPRAR</a></div>
 </div>
 
 <header class="hero">
@@ -338,7 +548,7 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
     </h1>
     <p class="hero-lead">Tenha acesso a uma seleção organizada com <strong>fornecedores de roupas masculinas</strong>, contatos por categoria e recursos extras para facilitar o crescimento da sua operação.</p>
     <div class="hero-actions">
-      <a class="cta" href="checkout.html">ADQUIRIR LISTA DE FORNECEDORES →</a>
+      <a class="cta" href="/checkout.html">ADQUIRIR LISTA DE FORNECEDORES →</a>
       <a class="cta secondary" href="#conteudo">VER O QUE ESTÁ INCLUSO</a>
     </div>
     <div class="trust"><span>🔒 <b>COMPRA SEGURA</b></span><span>⚡ <b>ACESSO DIGITAL</b></span><span>✓ <b>CONTEÚDO ORGANIZADO</b></span></div>
@@ -390,7 +600,7 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
       <div class="bonus-money-badge">$$$</div>
       <div class="bonus-promo-content">
         <h3>TRANSFORME SEUS CONTATOS EM CLIENTES</h3>
-        <a class="promo-btn" href="checkout.html">↘ QUERO ADQUIRIR A LISTA</a>
+        <a class="promo-btn" href="/checkout.html">↘ QUERO ADQUIRIR A LISTA</a>
       </div>
     </div>
 
@@ -424,7 +634,7 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
     <div class="offer-mini"><span>Oferta expira em</span><strong id="priceTimer">30:00</strong></div>
     <div class="price-card"><span class="badge">Acesso digital imediato</span><h2>LISTA DE FORNECEDORES</h2><p class="plus">+ BÔNUS EXCLUSIVO</p><div class="old">DE R$ 700,00</div><div class="installment">OU 12X DE <strong>R$ 29,21</strong></div><div class="price"><strong>R$ 297</strong><sup>,00</sup></div><div class="once">Pagamento único • Entrega imediata</div>
       <div class="benefits-box"><ul><li>Lista completa de fornecedores de confiança</li><li>Bônus com contatos de profissionais que podem fortalecer sua loja</li><li>Acesso rápido e organizado para consultar quando precisar</li></ul></div>
-      <a class="cta" href="checkout.html">GARANTIR AGORA A LISTA!!! →</a>
+      <a class="cta" href="/checkout.html">GARANTIR AGORA A LISTA!!! →</a>
       <div class="offer-meta"><span>🔒 Compra 100% segura</span><span>⚡ Entrega por e-mail imediata</span></div>
     </div>
   </div>
@@ -447,7 +657,7 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
     <article class="testimonial"><div class="stars">★★★★★</div><p>“Gostei porque os contatos ficam reunidos em um só lugar. Para quem está montando uma loja, economiza bastante tempo de pesquisa.”</p><small>GABRIEL SANTOS — LOJA DE MODA MASCULINA — RIO DE JANEIRO/RJ</small></article>
     <article class="testimonial"><div class="stars">★★★★★</div><p>“A lista é simples de consultar e ajuda a comparar opções de diferentes categorias. A experiência ficou bem prática.”</p><small>MATHEUS OLIVEIRA — LOJA MULTIMARCAS — ESPÍRITO SANTO/ES</small></article>
   </div>
-  <div class="final-actions"><a class="cta" href="checkout.html">QUERO A LISTA AGORA</a><a class="ghost-link" href="login.html">JÁ COMPREI — ACESSAR MINHA LISTA</a></div>
+  <div class="final-actions"><a class="cta" href="/checkout.html">QUERO A LISTA AGORA</a><a class="ghost-link" href="login.html">JÁ COMPREI — ACESSAR MINHA LISTA</a></div>
 </div></section>
 
 <footer><div class="wrap"><div class="footer-row"><div class="brand">LISTAS ALPHA</div><div class="footer-links"><a href="#">Termos</a><a href="#">Privacidade</a><a href="#">Reembolso</a><a href="#">Contato</a></div></div><p class="copy">© 2026 Listas Alpha. Todos os direitos reservados.</p></div></footer>
@@ -459,7 +669,7 @@ footer{padding:38px 0;background:#020202}.footer-row{display:flex;justify-conten
     </svg>
   </span><span class="wa-text">WhatsApp</span>
 </a>
-<div class="mobile-buy"><span><b>LISTA PREMIUM</b><small>R$ 297,00</small></span><a href="checkout.html">QUERO AGORA</a></div>
+<div class="mobile-buy"><span><b>LISTA PREMIUM</b><small>R$ 297,00</small></span><a href="/checkout.html">QUERO AGORA</a></div>
 <script>
 (function(){
   /* contador de 30 minutos */
